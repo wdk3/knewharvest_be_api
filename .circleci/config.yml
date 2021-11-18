@@ -17,8 +17,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Which bundler?
-          command: bundle -v
+          name: Install bundler gem
+          command: gem install bundler
       - ruby/bundle-install
 
 # Invoke jobs via workflows
