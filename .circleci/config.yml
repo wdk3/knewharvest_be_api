@@ -23,7 +23,6 @@ jobs:
       - run:
           name: Run Tests
           command: |
-            bundle exec rake db:migrate
             bundle exec rspec spec
 
 # Invoke jobs via workflows
