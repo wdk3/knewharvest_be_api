@@ -3,7 +3,7 @@
   <a href=https://github.com/wdk3/knewharvest_be_api/network/members><img src="https://img.shields.io/github/forks/wdk3/knewharvest_be_api.svg?style=for-the-badge" /></a>
   <a href=https://github.com/wdk3/knewharvest_be_api/stargazers><img src="https://img.shields.io/github/stars/wdk3/knewharvest_be_api.svg?style=for-the-badge" /></a>
   <a href=https://github.com/wdk3/knewharvest_be_api/issues><img src="https://img.shields.io/github/issues/wdk3/knewharvest_be_api.svg?style=for-the-badge" /></a>
-
+</div>
 
 <!-- PROJECT LOGO -->
 <br />
