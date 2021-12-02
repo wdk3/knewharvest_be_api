@@ -13,6 +13,16 @@ jobs:
   build:
     docker:
       - image: circleci/ruby:3.0.1
+        environment:
+            PG_HOST: localhost
+            PG_USER: circleci
+        - image: postgres:13.3
+          environment:
+            POSTGRES_USER: circleci
+            POSTGRES_DB: knewharvest_be_api_test
+            POSTGRES_HOST_AUTH_METHOD: trust
+            RAILS_ENV: test
+            RACK_ENV: test
     executor: ruby/default
     steps:
       - checkout
