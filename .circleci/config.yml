@@ -32,7 +32,7 @@ jobs:
       - ruby/bundle-install
       - run:
           name: Reset DB
-          command: bundle exec rake db:reset
+          command: bundle exec rake db:migrate
       - run:
           name: Run Tests
           command: |
