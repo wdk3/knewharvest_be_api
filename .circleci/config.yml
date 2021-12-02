@@ -21,6 +21,9 @@ jobs:
           command: gem install bundler
       - ruby/bundle-install
       - run:
+          name: Reset DB
+          command: rails db:reset
+      - run:
           name: Run Tests
           command: |
             bundle exec rspec spec
