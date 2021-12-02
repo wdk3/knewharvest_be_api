@@ -31,6 +31,9 @@ jobs:
           command: gem install bundler
       - ruby/bundle-install
       - run:
+          name: Wait for DB
+          command: dockerize -wait tcp://127.0.0.1:5432 -timeout 1m
+      - run:
           name: Reset DB
           command: bundle exec rake db:migrate
       - run:
