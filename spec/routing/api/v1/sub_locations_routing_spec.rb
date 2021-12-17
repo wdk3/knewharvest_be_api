@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe SubLocationsController, type: :routing do
+RSpec.describe Api::V1::SubLocationsController, type: :routing do
   describe "routing" do
     it "routes to #index" do
       expect(get: "/sub_locations").to route_to("sub_locations#index")
