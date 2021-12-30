@@ -1,4 +1,4 @@
-class SubLocationsController < ApplicationController
+class Api::V1::SubLocationsController < ApplicationController
   before_action :set_sub_location, only: [:show, :update, :destroy]
 
   # GET /sub_locations
