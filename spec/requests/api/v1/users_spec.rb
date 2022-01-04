@@ -44,13 +44,13 @@ RSpec.describe "/users", type: :request do
     context "with valid parameters" do
       it "creates a new User" do
         expect {
-          post api_v1_users_url,
+          post api_v1_users_path,
                params: { user: valid_attributes }, headers: valid_headers, as: :json
         }.to change(User, :count).by(1)
       end
 
       it "renders a JSON response with the new user" do
-        post api_v1_users_url,
+        post api_v1_users_path,
              params: { user: valid_attributes }, headers: valid_headers, as: :json
         expect(response).to have_http_status(:created)
         expect(response.content_type).to match(a_string_including("application/json"))
