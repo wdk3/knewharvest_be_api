@@ -37,7 +37,6 @@ RSpec.describe "/users", type: :request do
       user = User.create! valid_attributes
       get api_v1_user_path(user), as: :json
       expect(response).to be_successful
-      binding.pry
     end
   end
 
