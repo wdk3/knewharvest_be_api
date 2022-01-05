@@ -5,7 +5,13 @@ RSpec.describe "/sub_locations", type: :request do
   # SubLocation. As you add validations to SubLocation, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    user = create(:user)
+    {
+      name: "Plot 3",
+      dimensions: "25x13ft",
+      micro_climate: "Elevation 24ft above sea level. Arid. 9 hours of direct sunlight",
+      user_id: user.id
+    }
   }
 
 #   let(:invalid_attributes) {
@@ -31,29 +37,28 @@ RSpec.describe "/sub_locations", type: :request do
   describe "GET /show" do
     it "renders a successful response" do
       user = create(:user)
-      binding.pry
       sub_location = user.sub_locations.create! valid_attributes
       get api_v1_sub_location_path(sub_location), as: :json
       expect(response).to be_successful
     end
   end
 
-#   describe "POST /create" do
-#     context "with valid parameters" do
-#       it "creates a new SubLocation" do
-#         expect {
-#           post sub_locations_url,
-#                params: { sub_location: valid_attributes }, headers: valid_headers, as: :json
-#         }.to change(SubLocation, :count).by(1)
-#       end
+  describe "POST /create" do
+    context "with valid parameters" do
+      it "creates a new SubLocation" do
+        expect {
+          post api_v1_sub_locations_path,
+               params: { sub_location: valid_attributes }, headers: valid_headers, as: :json
+        }.to change(SubLocation, :count).by(1)
+      end
 
-#       it "renders a JSON response with the new sub_location" do
-#         post sub_locations_url,
-#              params: { sub_location: valid_attributes }, headers: valid_headers, as: :json
-#         expect(response).to have_http_status(:created)
-#         expect(response.content_type).to match(a_string_including("application/json"))
-#       end
-#     end
+      it "renders a JSON response with the new sub_location" do
+        post api_v1_sub_locations_path,
+             params: { sub_location: valid_attributes }, headers: valid_headers, as: :json
+        expect(response).to have_http_status(:created)
+        expect(response.content_type).to match(a_string_including("application/json"))
+      end
+    end
 
 #     context "with invalid parameters" do
 #       it "does not create a new SubLocation" do
@@ -113,5 +118,5 @@ RSpec.describe "/sub_locations", type: :request do
 #         delete sub_location_url(sub_location), headers: valid_headers, as: :json
 #       }.to change(SubLocation, :count).by(-1)
     # end
-  # end
+  end
 end
