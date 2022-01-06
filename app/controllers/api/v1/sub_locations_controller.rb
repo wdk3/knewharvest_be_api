@@ -18,7 +18,7 @@ class Api::V1::SubLocationsController < ApplicationController
     @sub_location = SubLocation.new(sub_location_params)
 
     if @sub_location.save
-      render json: @sub_location, status: :created, location: @sub_location
+      render json: @sub_location, status: :created
     else
       render json: @sub_location.errors, status: :unprocessable_entity
     end
