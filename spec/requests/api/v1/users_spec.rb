@@ -6,9 +6,9 @@ RSpec.describe "/users", type: :request do
   # adjust the attributes here as well.
   let(:valid_attributes) {
     {
-      farm_name: "Old McDonald's",
+      name: "McDonald",
       address: "000 EIEIO St, Charlotte NC 90210",
-      name: "McDonald"
+      farm_name: "McDonald's Farm"
     }
   }
 
