@@ -1,6 +1,7 @@
 FactoryBot.define do
   factory :user do
-    farm_name { "MyString" }
-    address { "MyString" }
+    name { Faker::FunnyName.name }
+    farm_name { Faker::Fantasy::Tolkien.location + " Farm" }
+    address { Faker::Address.full_address }
   end
 end
