@@ -36,8 +36,8 @@ RSpec.describe "/sub_locations", type: :request do
 
   describe "GET /show" do
     it "renders a successful response" do
-      user = create(:user)
-      sub_location = user.sub_locations.create! valid_attributes
+      sub_location = create(:sub_location)
+
       get api_v1_sub_location_path(sub_location), as: :json
       expect(response).to be_successful
     end
